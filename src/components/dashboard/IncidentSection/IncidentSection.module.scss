@@ -1,0 +1,104 @@
+.sectionContainer {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 0 4px;
+    h2 { font-size: 1.2rem; font-weight: 600; }
+    .refreshControl { display: flex; align-items: center; gap: 4px; color: #666; font-size: 0.85rem; cursor: pointer; }
+  }
+  
+  
+  .cardGrid {
+    display: grid;
+    // Reduced min-width to 320px to ensure 3 cards fit on standard desktop screens
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px; // Reduced gap between cards
+    width: 100%;
+  }
+  
+  .p1Card { border: 1.5px solid #ff4d4f; background-color: #fff1f0; }
+  .p2Card { border: 1.5px solid #722ed1; background-color: #f9f0ff; }
+  
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .headerLeft { display: flex; align-items: center; gap: 8px; }
+    .priorityText { font-weight: 700; font-size: 1.1rem; }
+    .moreIcon { color: #595959; cursor: pointer; }
+  }
+  
+  .badge {
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: white;
+    &.critical { background: #ff4d4f; }
+    &.high { background: #722ed1; }
+  }
+  
+  .cardBody {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #333;
+    text-align: left; // Forces all text inside body to the left
+  
+    p { 
+      margin: 4px 0; 
+      text-align: left; // Ensures paragraph tags align left
+    }
+  
+    .mainTitle { 
+      font-size: 1rem; 
+      font-weight: 600; 
+      margin-bottom: 8px;
+      text-align: left; 
+    }
+  
+    .appSection { 
+      margin-top: 8px;
+      text-align: left;
+    }
+  
+    .links { 
+      margin-top: 10px; 
+      text-align: left; // Ensures the Google Meet link is left aligned
+      
+      a { color: #1890ff; text-decoration: none; display: block; } 
+    }
+  }
+  
+  .cardFooter {
+    margin-top: auto;
+    padding-top: 12px;
+    text-align: center;
+    .btnGroup { display: flex; gap: 10px; justify-content: center; margin-bottom: 12px; }
+    
+    .btnOutline {
+      border: 1px solid #1890ff; color: #1890ff; background: transparent;
+      padding: 6px 12px; border-radius: 6px; cursor: pointer;
+    }
+    .btnFilled {
+      background: #1890ff; color: white; border: 1px solid #1890ff;
+      padding: 6px 12px; border-radius: 6px; cursor: pointer;
+    }
+    .serviceNowLink { display: block; color: #1890ff; font-weight: 700; font-size: 16px; text-decoration: none; }
+  }
+  .card {
+    border-radius: 10px;
+    padding: 0; // Removed padding inside the card as requested
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; // Ensures background colors don't bleed past rounded corners
+  }
+  .cardHeader, .cardBody, .cardFooter {
+    padding: 12px 16px; // Applying padding to internal sections instead for a clean look
+  }

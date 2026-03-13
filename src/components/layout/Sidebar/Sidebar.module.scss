@@ -1,0 +1,63 @@
+.sidebarNav {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    // Force everything in the nav to start from the left
+    align-items: flex-start; 
+  }
+  
+  .section {
+    width: 100%; // Ensure section takes full width of sidebar
+  
+    .sectionTitle {
+      padding: 0 1.25rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05rem;
+      text-align: left; // Explicitly left align heading
+    }
+  }
+  
+  .menuItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // This pushes the labelGroup left and arrow right
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    box-sizing: border-box; // Ensures padding doesn't break width
+    cursor: pointer;
+    transition: background 0.2s;
+    color: #333;
+  
+    &:hover {
+      background-color: #f0f2f5;
+    }
+  
+    .labelGroup {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 1; // Allows it to grow and fill space
+      
+      .icon {
+        display: flex;
+        color: #555;
+        min-width: 20px;
+      }
+      
+      .label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: left;
+      }
+    }
+  
+    .arrow {
+      color: #888; // Slightly darker for better visibility
+      flex-shrink: 0; // Prevents the arrow from getting squashed
+      margin-left: 10px;
+    }
+  }

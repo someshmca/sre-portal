@@ -1,0 +1,87 @@
+.container {
+    background: #fff;
+    border-radius: 12px;
+    margin-top: 24px;
+    overflow: hidden;
+  }
+  
+  .mainHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eeeeee;
+    
+    h2 { font-size: 16px; font-weight: 700; color: #000; margin: 0; }
+    .refresh { display: flex; align-items: center; gap: 4px; color: #666; font-size: 14px; }
+  }
+  
+  .contentBody {
+    padding: 20px;
+    display: flex;
+    flex-direction: row; // Force horizontal flow
+    flex-wrap: wrap;     // Wrap only if the screen gets too small
+    gap: 40px;           // Large gap between sub-sections
+  }
+  
+  .subSection {
+    margin-bottom: 20px;
+    flex: 0 1 auto; // Allows sub-sections to take only the space they need
+    min-width: 300px;
+    .subTitle { font-size: 16px; font-weight: 700; color: #000; margin-bottom: 16px; }
+  }
+  
+  .cardGrid {
+    display: flex;
+    flex-direction: row; // Force cards to sit side-by-side
+    flex-wrap: wrap;     // If a sub-section has 10 cards, they will wrap nicely
+    gap: 16px;           // Space between individual cards
+    margin-top: 12px;    // Space between sub-heading and cards
+  }
+  
+  .card {
+    display: flex;
+    width: 300px; // Slightly increased width
+    height: 100px; // Slightly increased height for better padding
+    border-radius: 8px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+  }
+  
+  /* Status Variations */
+  .alert { border-color: #ff4d4f; .sideBar { background: #ff4d4f; } }
+  .warning { border-color: #faad14; .sideBar { background: #faad14; } }
+  .success { border-color: #52c41a; .sideBar { background: #52c41a; } }
+  
+  .sideBar {
+    flex: 0 0 30%; // Increased from 20% to 30%
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 5px; // Internal cushion
+    
+    .sideText { 
+      font-size: 10px; 
+      margin-top: 4px;
+      word-break: break-word; // Ensures long words don't overflow
+    }
+  }
+  
+  .mainInfo {
+    flex: 0 0 70%;
+    padding: 0 20px; // 20px left and right padding as requested
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    height: 100%;
+    box-sizing: border-box;
+  
+    .category { font-size: 13px; color: #666; margin: 0 0 2px 0; line-height: 1.2;}
+    .value { font-size: 22px; font-weight: 800; color: #000; margin: 0 0 4px 0; line-height: 1;}
+    .target { font-size: 11px; color: #999; margin: 0; line-height: 1.2; margin-bottom: 10px;}
+  }
