@@ -1,0 +1,60 @@
+.availability-section {
+    margin-top: 24px;
+  
+    .section-heading {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 15px;
+    }
+  
+    .cards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  
+    .availability-card {
+      background: #fff;
+      padding: 20px 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      width: fit-content; // Shrinks to fit boxes
+  
+      .boxes-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+  
+    .status-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 180px;
+      flex: 0 0 180px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid;
+  
+      &.success { background: #f0fff4; border-color: #c6f6d5; }
+      &.warning { background: #fffaf0; border-color: #fef3c7; }
+      &.danger { background: #fff5f5; border-color: #fed7d7; }
+  
+      .box-left {
+        display: flex;
+        flex-direction: column;
+        .title { font-size: 14px; color: #4a5568; margin-bottom: 5px; }
+        .percent { font-size: 16px; font-weight: bold; color: #000; margin-bottom: 5px; }
+        .target { font-size: 12px; color: #718096; }
+      }
+  
+      .box-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .status-label { font-size: 11px; color: #718096; margin-top: 2px; }
+      }
+    }
+  }
