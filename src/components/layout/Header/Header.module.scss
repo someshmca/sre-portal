@@ -3,9 +3,10 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 100vw; // Ensure it doesn't exceed screen width
     height: 100%;
-    padding: 0 20px; // Ensure padding keeps icons away from the very edge
-    box-sizing: border-box; // Critical to include padding in width calculation
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 
   .leftSection {

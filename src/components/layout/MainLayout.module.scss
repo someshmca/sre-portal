@@ -10,8 +10,9 @@
   
   .header {
     width: 100%;
-    position: sticky;
+    position: fixed; // Changed from sticky to fixed
     top: 0;
+    left: 0;        // Ensure it starts from the very left
     z-index: 1000;
     height: 60px;
     background-color: #ffffff;
@@ -26,6 +27,7 @@
     flex: 1; // Fills remaining vertical space
     width: 100%;
     background-color: #e0f2fe; // Light sky blue background for the whole right side
+    margin-top: 60px; // CRITICAL: Match this to your header height
   }
   
   .sidebar {
