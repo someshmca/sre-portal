@@ -1,0 +1,26 @@
+{
+    "pageTitle": "Shop",
+    "systems": [
+      {
+        "id": "oms-1",
+        "name": "Order Management System",
+        "type": "success",
+        "availability": "99.0",
+        "metrics": [
+          { "label": "Volume", "value": "1.2M", "target": "Targeted 85%", "status": "success" },
+          { "label": "Latency", "value": "120ms", "target": "Targeted <200ms", "status": "warning" },
+          { "label": "Errors", "value": "0.02%", "target": "Targeted <0.1%", "status": "success" }
+        ]
+      },
+      {
+        "id": "inventory-1",
+        "name": "Inventory Service",
+        "type": "danger",
+        "availability": "94.2",
+        "metrics": [
+          { "label": "Throughput", "value": "850", "target": "Targeted 1k", "status": "danger" },
+          { "label": "CPU", "value": "92%", "target": "Targeted <70%", "status": "danger" }
+        ]
+      }
+    ]
+  }

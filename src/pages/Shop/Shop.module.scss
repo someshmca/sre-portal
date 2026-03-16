@@ -1,0 +1,86 @@
+.shopContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .pageHeader {
+    background-color: #ffffff;
+    padding: 10px 5px;
+    border-radius: 4px;
+    h1 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+    }
+  }
+  
+  .contentGrid {
+    background-color: #ffffff;
+    padding: 10px 5px;
+    display: flex;
+    flex-wrap: wrap; // Wraps to next line when viewport is full
+    gap: 20px;
+  }
+  
+  .systemCard {
+    min-width: 400px;
+    flex: 1;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid transparent;
+  
+    &.success { border-color: #dcfce7; .cardHeader { background-color: #dcfce7; } }
+    &.warning { border-color: #fef9c3; .cardHeader { background-color: #fef9c3; } }
+    &.danger { border-color: #fee2e2; .cardHeader { background-color: #fee2e2; } }
+  
+    .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 15px;
+      color: #000;
+  
+      .systemName { width: 70%; font-weight: 500; font-size: 14px; }
+      .availability { 
+        font-size: 12px;
+        .boldValue { font-size: 18px; font-weight: bold; margin-left: 4px; }
+      }
+    }
+  
+    .cardContent {
+      background-color: #ffffff;
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+  
+  .statusBox {
+    width: 120px;
+    padding: 10px 10px 10px 15px; // Extra left padding for thick border
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  
+    &.success { 
+      background-color: #f0fdf4; 
+      border-left: 10px solid #166534; 
+    }
+    &.warning { 
+      background-color: #fffbeb; 
+      border-left: 10px solid #92400e; 
+    }
+    &.danger { 
+      background-color: #fef2f2; 
+      border-left: 10px solid #991b1b; 
+    }
+  
+    .metricLabel { font-size: 14px; font-weight: bold; color: #4b5563; }
+    .metricValue { font-size: 20px; font-weight: bold; color: #000000; }
+    .metricTarget { font-size: 13px; color: #4b5563; font-weight: normal; }
+  }

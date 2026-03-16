@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import MainLayout from './components/layout/MainLayout';
 import Sidebar from './components/layout/Sidebar/Sidebar';
 import AvailabilitySection from './components/dashboard/AvailabilitySection/AvailabilitySection';
-import SamplePage from './components/SamplePage'; // Ensure this is created
+import SamplePage from './pages/SamplePage'; // Ensure this is created
 import IncidentSection from './components/dashboard/IncidentSection/IncidentSection';
 import SLOSection from './components/dashboard/SLOSection/SLOSection';
+import Shop from './pages/Shop/Shop';
 // Create a wrapper component
 const Dashboard: React.FC = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -22,7 +23,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        
+        <Route path="/shop" element={<Shop />} />
         {/* The '/*' allows it to match sub-routes like /shop/sub-1 */}
         <Route path="/:pageId/*" element={<SamplePage />} />
       </Routes>
