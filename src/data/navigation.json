@@ -1,0 +1,51 @@
+{
+    "sections": [
+      {
+        "id": "top",
+        "items": [
+          { "label": "Dashboard", "icon": "LayoutDashboard", "to": "/dashboard" },
+          { "label": "Configuration", "icon": "Settings", "to": "/configuration" },
+          { "label": "Alerts", "icon": "Bell", "to": "/alerts" }
+        ]
+      },
+      {
+        "id": "metrics",
+        "title": "Metrics",
+        "items": [
+          { "label": "Business Golden sign", "icon": "BarChart3", "to": "/business-golden-sign", "hasDropdown": true },
+          { "label": "Sephora", "icon": "Package", "to": "/sephora", "hasDropdown": true },
+          { "label": "Reliability incidents", "icon": "ShieldAlert", "to": "/reliability-incidents" },
+          { "label": "Infrastructure", "icon": "HardDrive", "to": "/infrastructure" },
+          { "label": "Error budget", "icon": "Receipt", "to": "/error-budget" },
+          { "label": "Tier-1 applications", "icon": "Layers", "to": "/tier-1-apps" }
+        ]
+      },
+      {
+        "id": "common",
+        "title": "Common Services",
+        "items": [
+          { "label": "Product Information", "icon": "Briefcase", "to": "/product-info", "hasDropdown": true }
+        ]
+      },
+      {
+        "id": "stores",
+        "title": "Stores and Digital",
+        "items": [
+          { "label": "Associate", "to": "/associate", "hasDropdown": true },
+          { 
+            "label": "Shop", 
+            "to": "/shop", 
+            "hasDropdown": true,
+            "subItems": [
+              { "label": "Post Purchase", "to": "/post-purchase" },
+              { "label": "Associate", "to": "/associate-sub" },
+              { "label": "Common Services", "to": "/common-services-sub" }
+            ]
+          },
+          { "label": "Post purchase", "to": "/post-purchase", "hasDropdown": true },
+          { "label": "Reliability", "to": "/reliability", "hasDropdown": true },
+          { "label": "Loyalty & Retail Services", "to": "/loyalty-retail-services", "hasDropdown": true }
+        ]
+      }
+    ]
+  }

@@ -5,6 +5,10 @@
     gap: 1.5rem;
     // Force everything in the nav to start from the left
     align-items: flex-start; 
+    a {
+        text-decoration: none; // Removes underlines from all links
+        color: inherit;
+      }
   }
   
   .section {
@@ -59,5 +63,51 @@
       color: #888; // Slightly darker for better visibility
       flex-shrink: 0; // Prevents the arrow from getting squashed
       margin-left: 10px;
+    }
+  }
+  .menuItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none !important; // Force remove underline
+    color: #4a5568;
+  
+    .leftContent {
+      display: flex;
+      align-items: center;
+      gap: 12px; // Space between icon and text
+  
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px; // Fixed width for icons ensures text aligns vertically
+      }
+    }
+  }
+  
+  .dropdownContent {
+    display: flex;
+    flex-direction: column; // Stack sub-menus vertically, not side-by-side
+    padding-left: 44px; // Align text under the parent label
+    margin-bottom: 8px;
+  
+    .dropdownItem {
+      padding: 6px 0;
+      font-size: 13px;
+      color: #64748b;
+      text-decoration: none !important; // Removes blue link look
+      
+      &:hover {
+        color: #000;
+      }
+  
+      &.subActive {
+        color: #0284c7;
+        font-weight: 600;
+      }
     }
   }

@@ -1,44 +1,58 @@
-import { 
-    LayoutDashboard, Settings, Bell, BarChart3, 
-    ShieldAlert, HardDrive, Receipt, Layers, Briefcase, Package 
-  } from 'lucide-react';
-  import { SidebarSection } from './SidebarSection';
-  import { MenuItem } from './MenuItem';
-  import styles from './Sidebar.module.scss';
-  
-  const Sidebar = () => {
-    return (
-      <nav className={styles.sidebarNav}>
-        {/* Top Level Menus */}
-        <SidebarSection>
-          <MenuItem icon={<LayoutDashboard size={18} />} label="Dashboard" />
-          <MenuItem icon={<Settings size={18} />} label="Configuration" />
-          <MenuItem icon={<Bell size={18} />} label="Alerts" />
-        </SidebarSection>
-  
-        {/* Metrics Section */}
-        <SidebarSection title="Metrics">
-          <MenuItem icon={<BarChart3 size={18} />} label="Business Golden sign" hasDropdown />
-          <MenuItem icon={<Package size={18} />} label="Sephora" hasDropdown />
-          <MenuItem icon={<ShieldAlert size={18} />} label="Reliability incidents" />
-          <MenuItem icon={<HardDrive size={18} />} label="Infrastructure" />
-          <MenuItem icon={<Receipt size={18} />} label="Error budget" />
-          <MenuItem icon={<Layers size={18} />} label="Tier-1 applications" />
-        </SidebarSection>
-  
-        {/* Common Services Section */}
-        <SidebarSection title="Common Services">
-          <MenuItem icon={<Briefcase size={18} />} label="Product Information" hasDropdown />
-        </SidebarSection>
-  
-        {/* Stores and Digital Section */}
-        <SidebarSection title="Stores and Digital">
-          {["Associate", "Shop", "Post purchase", "Reliability", "Loyalty & Retail Services"].map(item => (
-            <MenuItem key={item} label={item} hasDropdown />
+import * as Icons from 'lucide-react';
+import { SidebarSection } from './SidebarSection';
+import { MenuItem } from './MenuItem';
+import styles from './Sidebar.module.scss';
+import navData from '../../../data/navigation.json';
+
+interface NavSubItem {
+  label: string;
+  to: string;
+}
+
+interface NavItem {
+  label: string;
+  to: string;
+  icon?: string;
+  hasDropdown?: boolean;
+  subItems?: NavSubItem[];
+}
+
+interface NavSection {
+  id: string;
+  title?: string;
+  items: NavItem[];
+}
+
+const Sidebar = () => {
+  const sections = navData.sections as NavSection[];
+
+  const renderIcon = (iconName?: string) => {
+    if (!iconName) return null;
+    
+    // Use the LucideIcon type instead of 'any' to satisfy ESLint
+    const IconComponent = Icons[iconName as keyof typeof Icons] as Icons.LucideIcon;
+    
+    return IconComponent ? <IconComponent size={18} /> : null;
+  };
+
+  return (
+    <nav className={styles.sidebarNav}>
+      {sections.map((section) => (
+        <SidebarSection key={section.id} title={section.title}>
+          {section.items.map((item) => (
+            <MenuItem 
+              key={item.label}
+              icon={renderIcon(item.icon)}
+              label={item.label}
+              to={item.to}
+              hasDropdown={item.hasDropdown}
+              subItems={item.subItems}
+            />
           ))}
         </SidebarSection>
-      </nav>
-    );
-  };
-  
-  export default Sidebar;
+      ))}
+    </nav>
+  );
+};
+
+export default Sidebar;
