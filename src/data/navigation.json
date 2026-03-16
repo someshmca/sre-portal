@@ -37,15 +37,15 @@
             "to": "/shop", 
             "hasDropdown": true,
             "subItems": [
-              { "label": "Post Purchase", "to": "/post-purchase" },
-              { "label": "Associate", "to": "/associate-sub" },
-              { "label": "Common Services", "to": "/common-services-sub" }
+              { "label": "Post Purchase", "to": "/shop/post-purchase" },
+              { "label": "Associate", "to": "/shop/associate" },
+              { "label": "Common Services", "to": "/shop/common-services" }
             ]
           },
-          { "label": "Post purchase", "to": "/post-purchase", "hasDropdown": true },
+          { "label": "Post purchase", "to": "/post-purchase-top", "hasDropdown": true },
           { "label": "Reliability", "to": "/reliability", "hasDropdown": true },
           { "label": "Loyalty & Retail Services", "to": "/loyalty-retail-services", "hasDropdown": true }
         ]
       }
     ]
-  }
+}
