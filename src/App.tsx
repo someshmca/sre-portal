@@ -7,6 +7,7 @@ import SamplePage from './pages/SamplePage'; // Ensure this is created
 import IncidentSection from './components/dashboard/IncidentSection/IncidentSection';
 import SLOSection from './components/dashboard/SLOSection/SLOSection';
 import Shop from './pages/Shop/Shop';
+import GIV from './pages/GIV/GIV';
 // Create a wrapper component
 const Dashboard: React.FC = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         <Route path="/shop" element={<Shop />} />
         {/* The '/*' allows it to match sub-routes like /shop/sub-1 */}
         <Route path="/:pageId/*" element={<SamplePage />} />
+        <Route path="/fulfillment/giv" element={<GIV />} />
       </Routes>
       </MainLayout>
     </Router>

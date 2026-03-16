@@ -46,6 +46,25 @@
           { "label": "Reliability", "to": "/reliability", "hasDropdown": true },
           { "label": "Loyalty & Retail Services", "to": "/loyalty-retail-services", "hasDropdown": true }
         ]
+      },
+      {
+        "id": "cce-supply-chain",
+        "title": "CCE Supply Chain",
+        "items": [
+          {
+            "label": "Fulfilment Orchestration",
+            "icon": "Truck",
+            "to": "/fulfillment",
+            "hasDropdown": true,
+            "subItems": [
+              { "label": "Global Inventory & Visibility", "to": "/fulfillment/giv" },
+              { "label": "OTS - Return Services", "to": "/fulfillment/ots" },
+              { "label": "Promising & Availability", "to": "/fulfillment/promising" },
+              { "label": "Fixed Support", "to": "/fulfillment/fixed-support" },
+              { "label": "Supply Chain", "to": "/fulfillment/supply-chain" }
+            ]
+          }
+        ]
       }
     ]
 }
