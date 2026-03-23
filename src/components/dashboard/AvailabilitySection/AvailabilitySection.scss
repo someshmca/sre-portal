@@ -1,99 +1,121 @@
 .availability-section {
-    margin-top: 24px;
-  
-    .section-heading {
-      font-size: 16px;
-      font-weight: bold;
-      color: #000;
-      margin-bottom: 15px;
+  margin-top: $avail-section-margin;
+
+  .section-heading {
+    font-size: $font-size-header;
+    font-weight: $font-weight-bold;
+    color: $color-text-main; 
+    margin-bottom: 15px;
+  }
+
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .availability-card {
+    background: $avail-card-bg;
+    padding: $avail-card-padding;
+    border-radius: 8px;
+    // Handled shadow locally since it was removed from global variables
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+    width: fit-content;
+
+    .card-group-title {
+      font-size: $font-size-body;
+      font-weight: 600;
+      color: $color-text-main;
+      margin-block: 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid $color-border-tabs;
     }
-  
-    .cards-wrapper {
+
+    .boxes-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
-      align-items: flex-start;
+      gap: $avail-box-gap;
     }
-  
-    .availability-card {
-      background: #fff;
-      padding: 20px 15px;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      width: fit-content;
-  
-      .card-group-title {
-        font-size: 14px;
-        font-weight: 600;
-        color: #333;
-        margin-block: 0;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #f0f0f0;
-      }
-  
-      .boxes-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
+  }
+
+  .status-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: $status-box-width; 
+    flex: 0 0 $status-box-width;
+    padding: $avail-status-box-padding;
+    border-radius: 8px;
+    border: 1px solid;
+
+    // Aligned with Functional Semantic variables (-bg and -border)
+    &.success { 
+      background: $color-success-bg; 
+      border-color: $color-success-border; 
+      .percent { color: $color-success-text; } // Added for high-contrast text
     }
-  
-    .status-box {
+    &.warning { 
+      background: $color-warning-bg; 
+      border-color: $color-warning-border; 
+      .percent { color: $color-warning-text; }
+    }
+    &.danger { 
+      background: $color-danger-bg; 
+      border-color: $color-danger-border; 
+      .percent { color: $color-danger-text; }
+    }
+
+    .box-left {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 120px; // Maintained as requested
-      flex: 0 0 120px;
-      padding: 12px 10px; // Slightly reduced horizontal padding to fit 120px width
-      border-radius: 8px;
-      border: 1px solid;
-  
-      &.success { background: #ADF7C6; border-color: #75D6A4; }
-      &.warning { background: #fffaf0; border-color: #CC9A99; }
-      &.danger { background: #F9E5E3; border-color: #fed7d7; }
-  
-      .box-left {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        
-        .title { 
-          font-size: 14px; 
-          color: #555a63; 
-          margin-bottom: 5px; 
-          font-weight: 600; 
-          text-overflow: ellipsis; 
-          white-space: nowrap; 
-          overflow: hidden; 
-          width: 75px; // Adjusted for 120px total width
-        }
-        .percent { font-size: 16px; font-weight: bold; color: #000; margin-bottom: 5px; }
-        .target { font-size: 11px; color: #718096; }
+      flex-direction: column;
+      overflow: hidden;
+      
+      .title { 
+        font-size: $font-size-body; 
+        color: $color-text-main; 
+        margin-bottom: 5px; 
+        font-weight: 600; 
+        text-overflow: ellipsis; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        width: 75px; 
       }
-  
-      .box-right {
+      .percent { 
+        font-size: $font-size-header; 
+        font-weight: $font-weight-bold; 
+        // Color is now handled dynamically by the parent status class (&.success, etc.)
+        margin-bottom: 5px; 
+      }
+      .target { 
+        font-size: 11px; 
+        color: $color-text-muted; 
+      }
+    }
+
+    .box-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 30px; 
+
+      .icon-wrapper {
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-width: 30px; // Ensure space for the larger icon
-    
-        .icon-wrapper {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: transparent; // Ensure no background circle
-          border: none;            // Removed icon border
-          padding: 0;
-        }
-    
-        .status-label {
-          font-size: 10px;
-          color: #4a5568; 
-          margin-top: 4px;
-          font-weight: 600; // Text bold with 600 as requested
-          text-transform: capitalize;
-        }
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+
+      .status-label {
+        font-size: 10px;
+        color: $color-text-muted; 
+        margin-top: 4px;
+        font-weight: 600;
+        text-transform: capitalize;
       }
     }
   }
+}

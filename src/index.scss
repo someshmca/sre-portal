@@ -1,0 +1,65 @@
+/* Import global variables to use for defaults */
+
+/* 1. Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Body Configuration */
+html, 
+body {
+  height: 100%;
+  width: 100%;
+  /* Remove the flex/centering from Vite defaults */
+  display: block; 
+}
+
+body {
+  font-family: $font-main;
+  font-size: $font-size-body;
+  line-height: 1.5;
+  color: $color-text-main;
+  background-color: $bg-body; /* Using #f8fafc from variables */
+  
+  /* Smooth font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Ensure no horizontal scroll from the root */
+  overflow-x: hidden;
+}
+
+/* 3. Global Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  color: $color-text-main;
+  font-weight: $font-weight-bold;
+}
+
+/* 4. Link & Button Resets */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* 5. Utility Classes (Optional but helpful for reuse) */
+.success-theme {
+  background-color: $color-success-bg;
+  border-color: $color-success-border;
+}
+
+.danger-theme {
+  background-color: $color-danger-bg;
+  border-color: $color-danger-border;
+}
+
+.warning-theme {
+  background-color: $color-warning-bg;
+  border-color: $color-warning-border;
+}

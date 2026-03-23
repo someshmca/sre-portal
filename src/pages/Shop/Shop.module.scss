@@ -1,86 +1,118 @@
 .shopContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: $shop-container-gap;
+}
+
+.pageHeader {
+  background-color: $bg-white;
+  padding: 10px 5px;
+  border-radius: 4px;
   
-  .pageHeader {
-    background-color: #ffffff;
-    padding: 10px 5px;
-    border-radius: 4px;
-    h1 {
-      margin: 0;
-      font-size: 16px;
-      font-weight: bold;
-      color: #000000;
+  h1 {
+    margin: 0;
+    font-size: $font-size-header;
+    font-weight: $font-weight-bold;
+    color: $color-text-main;
+  }
+}
+
+.contentGrid {
+  background-color: $bg-white;
+  padding: 10px 5px;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: $shop-container-gap;
+}
+
+.systemCard {
+  min-width: $shop-card-min-width;
+  flex: 1;
+  max-width: $shop-card-max-width;
+  border-radius: $shop-card-radius;
+  overflow: hidden;
+  border: 1px solid transparent;
+
+  // Uses the new -border naming for stroke colors
+  &.success { 
+    border-color: $color-success-border; 
+    .cardHeader { background-color: $color-success-bg; } 
+  }
+  &.warning { 
+    border-color: $color-warning-border; 
+    .cardHeader { background-color: $color-warning-bg; } 
+  }
+  &.danger { 
+    border-color: $color-danger-border; 
+    .cardHeader { background-color: $color-danger-bg; } 
+  }
+
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    color: $color-text-main;
+
+    .systemName { 
+      width: 70%; 
+      font-weight: $font-weight-medium; 
+      font-size: $font-size-body; 
     }
-  }
-  
-  .contentGrid {
-    background-color: #ffffff;
-    padding: 10px 5px;
-    display: flex;
-    flex-wrap: wrap; // Wraps to next line when viewport is full
-    gap: 20px;
-  }
-  
-  .systemCard {
-    min-width: 400px;
-    flex: 1;
-    max-width: 600px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid transparent;
-  
-    &.success { border-color: #dcfce7; .cardHeader { background-color: #dcfce7; } }
-    &.warning { border-color: #fef9c3; .cardHeader { background-color: #fef9c3; } }
-    &.danger { border-color: #fee2e2; .cardHeader { background-color: #fee2e2; } }
-  
-    .cardHeader {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 15px;
-      color: #000;
-  
-      .systemName { width: 70%; font-weight: 500; font-size: 14px; }
-      .availability { 
-        font-size: 12px;
-        .boldValue { font-size: 18px; font-weight: bold; margin-left: 4px; }
+    .availability { 
+      font-size: $font-size-label;
+      .boldValue { 
+        font-size: $font-size-value; // Using global variable now
+        font-weight: $font-weight-bold; 
+        margin-left: 4px; 
       }
     }
-  
-    .cardContent {
-      background-color: #ffffff;
-      padding: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
   }
-  
-  .statusBox {
-    width: 120px;
-    padding: 10px 10px 10px 15px; // Extra left padding for thick border
-    border-radius: 8px;
+
+  .cardContent {
+    background-color: $bg-white;
+    padding: 15px;
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-  
-    &.success { 
-      background-color: #f0fdf4; 
-      border-left: 10px solid #166534; 
-    }
-    &.warning { 
-      background-color: #fffbeb; 
-      border-left: 10px solid #92400e; 
-    }
-    &.danger { 
-      background-color: #fef2f2; 
-      border-left: 10px solid #991b1b; 
-    }
-  
-    .metricLabel { font-size: 14px; font-weight: bold; color: #4b5563; }
-    .metricValue { font-size: 20px; font-weight: bold; color: #000000; }
-    .metricTarget { font-size: 13px; color: #4b5563; font-weight: normal; }
+    flex-wrap: wrap;
+    gap: 12px;
   }
+}
+
+.statusBox {
+  width: $shop-status-box-width;
+  padding: 5px; 
+  border-radius: $shop-card-radius;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  // Applying functional logic: -bg for fill, -border for the thick stroke
+  &.success { 
+    background-color: $color-success-bg; 
+    border-left: $shop-status-box-border solid $color-success-border; 
+  }
+  &.warning { 
+    background-color: $color-warning-bg; 
+    border-left: $shop-status-box-border solid $color-warning-border; 
+  }
+  &.danger { 
+    background-color: $color-danger-bg; 
+    border-left: $shop-status-box-border solid $color-danger-border; 
+  }
+
+  .metricLabel { 
+    font-size: 13px; 
+    font-weight: $font-weight-bold; 
+    color: $color-text-main; 
+  }
+  .metricValue { 
+    font-size: $font-size-body; 
+    font-weight: $font-weight-bold; 
+    color: $color-text-main; 
+  }
+  .metricTarget { 
+    font-size: $font-size-label; 
+    color: $color-text-muted; 
+    font-weight: normal; 
+  }
+}

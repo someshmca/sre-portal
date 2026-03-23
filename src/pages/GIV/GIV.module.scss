@@ -1,89 +1,124 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: $giv-container-gap;
+}
+
+.pageHeader {
+  background: $bg-white;
+  padding: 10px 15px; // Fallback for simplified padding
+  
+  h1 { 
+    font-size: $font-size-header; 
+    font-weight: $font-weight-bold; 
+    margin: 0; 
+    color: $color-text-main;
   }
-  
-  .pageHeader {
-    background: white;
-    padding: 10px 15px;
-    h1 { font-size: 16px; font-weight: bold; margin: 0; }
-  }
-  
-  .tabContentWrapper {
-    background: white;
-    padding: 10px 15px;
-    min-height: 500px;
-  }
-  
-  .tabs {
-    display: flex;
-    gap: 20px;
-    border-bottom: 1px solid #edf2f7;
-    margin-bottom: 20px;
-  
-    .tabItem {
-      padding: 10px 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-weight: 500;
-      color: #718096;
-      
-      &.active {
-        color: #000;
-        border-bottom: 2px solid #000;
-      }
-    }
-  }
-  
-  .metricsRow {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 25px;
-  }
-  
-  .statusBox {
-    width: 120px;
-    padding: 10px 10px 10px 15px;
-    background: #f8fafc;
-    border-radius: 4px;
+}
+
+.tabContentWrapper {
+  background: $bg-white;
+  padding: 10px 15px;
+  min-height: $giv-min-height-wrapper;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid $color-border-tabs;
+  margin-bottom: 20px;
+
+  .tabItem {
+    padding: 10px 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: $font-weight-medium;
+    color: $color-text-muted;
+    transition: all 0.2s ease;
     
-    // Success Styling: Dark Green border, Light Green background
-    &.success { 
-        border-left: 10px solid #22c55e; 
-        background-color: #f0fdf4; // Light green
-    }
-    
-    // Danger Styling: Dark Red border, Light Red background
-    &.danger { 
-        border-left: 10px solid #ef4444; 
-        background-color: #fef2f2; // Light red
+    &.active {
+      color: $color-action-primary; // Replaced #000
+      border-bottom: 2px solid $color-action-primary; // Replaced #000
     }
 
-    .label { font-size: 12px; font-weight: bold; color: #1e293b; margin-bottom: 4px; }
-    .value { font-size: 20px; font-weight: bold; color: #000; }
+    &:hover:not(.active) {
+      color: $color-text-main;
+    }
+  }
+}
+
+.metricsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $giv-container-gap;
+  margin-bottom: 25px;
+}
+
+.statusBox {
+  width: $status-box-width;
+  padding: $status-box-padding;
+  border-radius: $shop-card-radius; // Unified 8px radius
+  
+  &.success { 
+    background-color: $color-success-bg;
+    border-left: $status-box-border-width solid $color-success-border;
+    .value { color: $color-success-text; }
   }
   
-  .chartGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 charts per row
-    gap: 20px;
+  &.danger { 
+    background-color: $color-danger-bg;
+    border-left: $status-box-border-width solid $color-danger-border;
+    .value { color: $color-danger-text; }
+  }
+
+  &.warning {
+    background-color: $color-warning-bg;
+    border-left: $status-box-border-width solid $color-warning-border;
+    .value { color: $color-warning-text; }
+  }
+
+  .label { 
+    font-size: $font-size-label; 
+    font-weight: $font-weight-bold; 
+    color: $color-text-main; 
+    margin-bottom: 4px; 
   }
   
-  .chartCard {
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 15px;
-    background: #fff;
-  
-    .chartTitle { font-size: 14px; font-weight: bold; margin-bottom: 15px; }
-    .chartBody { height: 180px; width: 100%; }
+  .value { 
+    font-size: $font-size-value; 
+    font-weight: $font-weight-bold; 
+    // Logic: Color now inherits from the parent status class
+  }
+}
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $chart-grid-gap;
+}
+
+.chartCard {
+  border: 1px solid $color-border-light;
+  border-radius: $shop-card-radius; // Unified 8px radius
+  padding: $chart-card-padding;
+  background: $bg-white;
+
+  .chartTitle { 
+    font-size: $font-size-body; 
+    font-weight: $font-weight-bold; 
+    color: $color-text-main;
+    margin-bottom: 15px; 
   }
   
-  .welcomeState {
-    padding: 50px;
-    text-align: center;
-    color: #718096;
+  .chartBody { 
+    height: $chart-body-height; 
+    width: 100%; 
   }
+}
+
+.welcomeState {
+  padding: 50px;
+  text-align: center;
+  color: $color-text-muted;
+}

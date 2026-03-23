@@ -1,124 +1,112 @@
 .sidebarNav {
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    // Force everything in the nav to start from the left
-    align-items: flex-start; 
-    a {
-        text-decoration: none; // Removes underlines from all links
-        color: inherit;
-      }
+  padding: $sidebar-padding-v 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start; 
+
+  a {
+    text-decoration: none !important;
+    color: inherit;
   }
-  
-  .section {
-    width: 100%; // Ensure section takes full width of sidebar
-  
-    .sectionTitle {
-      padding: 0 1.25rem;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05rem;
-      text-align: left; // Explicitly left align heading
-    }
+}
+
+.section {
+  width: 100%;
+
+  .sectionTitle {
+    padding: 0 1.25rem;
+    font-size: $font-size-label; // Mapped to global label size
+    text-transform: uppercase;
+    color: $color-text-muted;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05rem;
+    text-align: left;
   }
-  
-  .menuItem {
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $sidebar-item-padding;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  color: $color-text-main;
+  text-decoration: none !important;
+
+  &:hover {
+    background-color: $bg-body;
+    color: $color-text-main;
+  }
+
+  // Group for Icon + Text
+  .labelGroup, .leftContent {
     display: flex;
     align-items: center;
-    justify-content: space-between; // This pushes the labelGroup left and arrow right
-    width: 100%;
-    padding: 0.75rem 1.25rem;
-    box-sizing: border-box; // Ensures padding doesn't break width
-    cursor: pointer;
-    transition: background 0.2s;
-    color: #333;
-  
+    gap: 0.75rem;
+    flex: 1;
+    
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // Using a muted color for inactive icons
+      color: $color-text-muted; 
+      min-width: $sidebar-icon-size;
+      width: $sidebar-icon-size;
+    }
+    
+    .label {
+      font-size: $sidebar-font-size-label;
+      font-weight: $font-weight-medium;
+      text-align: left;
+    }
+  }
+
+  .arrow {
+    color: $color-text-muted;
+    flex-shrink: 0;
+    margin-left: 10px;
+    transition: transform 0.2s;
+  }
+
+  // Active Main Menu Item
+  &.active {
+    background-color: $sidebar-active-bg;
+    color: $sidebar-active-text !important;
+    font-weight: $font-weight-bold;
+    border-right: $sidebar-active-border-width solid $sidebar-active-text;
+    
+    .icon {
+      color: $sidebar-active-text;
+    }
+  }
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  padding-left: $sidebar-dropdown-padding-left;
+  margin-bottom: 8px;
+
+  .dropdownItem {
+    padding: 6px 0;
+    font-size: $sidebar-font-size-sub;
+    color: $color-text-muted;
+    text-decoration: none !important;
+    transition: color 0.2s;
+    
     &:hover {
-      background-color: #f0f2f5;
+      color: $color-text-main; // Replaced hardcoded #000
     }
-  
-    .labelGroup {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex: 1; // Allows it to grow and fill space
-      
-      .icon {
-        display: flex;
-        color: #555;
-        min-width: 20px;
-      }
-      
-      .label {
-        font-size: 0.9rem;
-        font-weight: 500;
-        text-align: left;
-      }
-    }
-  
-    .arrow {
-      color: #888; // Slightly darker for better visibility
-      flex-shrink: 0; // Prevents the arrow from getting squashed
-      margin-left: 10px;
-    }
-    &.active {
-        background-color: #f0f9ff; // Light blue background
-        color: #0284c7 !important; // Blue text
-        font-weight: 600;
-        border-right: 3px solid #0284c7; // Indicator bar on the right
-        
-        .icon {
-            color: #0284c7;
-        }
+
+    // Active Sub-menu Item (e.g., GIV is active)
+    &.subActive {
+      color: $sidebar-active-text !important;
+      font-weight: $font-weight-bold;
     }
   }
-  .menuItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 12px;
-    width: 100%;
-    cursor: pointer;
-    text-decoration: none !important; // Force remove underline
-    color: #4a5568;
-  
-    .leftContent {
-      display: flex;
-      align-items: center;
-      gap: 12px; // Space between icon and text
-  
-      .icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 20px; // Fixed width for icons ensures text aligns vertically
-      }
-    }
-  }
-  
-  .dropdownContent {
-    display: flex;
-    flex-direction: column; // Stack sub-menus vertically, not side-by-side
-    padding-left: 44px; // Align text under the parent label
-    margin-bottom: 8px;
-  
-    .dropdownItem {
-      padding: 6px 0;
-      font-size: 13px;
-      color: #64748b;
-      text-decoration: none !important; // Removes blue link look
-      
-      &:hover {
-        color: #000;
-      }
-  
-      &.subActive {
-        color: #0284c7 !important;
-        font-weight: 600;
-        background-color: #f8fafc;
-      }
-    }
-  }
+}

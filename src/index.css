@@ -1,7 +1,0 @@
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  place-items: initial; /* Vite sometimes sets this to center */
-  min-width: 100%;
-}

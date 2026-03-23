@@ -1,0 +1,119 @@
+// =============================================================================
+// GLOBAL BRAND & NEUTRAL COLORS
+// =============================================================================
+$bg-white:           #ffffff;
+$bg-body:            #f8fafc;
+$bg-header:          #ffffff;
+$color-text-main:    #1e293b;
+$color-text-muted:   #718096;
+$color-border-light: #e2e8f0;
+$color-border-tabs:  #edf2f7;
+
+$color-action-primary: #007bff;
+$color-action-hover:   #0056b3; 
+
+// =============================================================================
+// STATUS COLORS (Success, Warning, Danger, Info)
+// =============================================================================
+$color-success-bg:     #B9F6CE;
+$color-success-border: #33834f;
+$color-success-text:   #166534;
+
+$color-warning-bg:     #FDE680;
+$color-warning-border: #92400e;
+$color-warning-text:   #78350f;
+
+$color-danger-bg:      #FAE5E4;
+$color-danger-border:  #bf4848;
+$color-danger-text:    #7f1d1d;
+
+$color-info-bg:        #e0f2fe;
+$color-info-border:    #0ea5e9;
+$color-info-text:      #0369a1;
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+$font-main:              'Inter', system-ui, -apple-system, sans-serif;
+$font-size-header:       16px;
+$font-size-body:         14px;
+$font-size-value:        20px;
+$font-size-label:        12px;
+$font-weight-bold:       bold;
+$font-weight-medium:     500;
+$header-logo-font-size:  1.5rem; 
+
+// =============================================================================
+// APP SHELL (Header & Sidebar)
+// =============================================================================
+$header-height:            60px;
+$header-padding-side:      24px;
+$header-bg:                $bg-white;
+$header-border:            #e0e0e0;
+$header-search-max-width:  400px;
+$header-search-bg:         #f1f5f9;
+
+$sidebar-width:            240px;
+$sidebar-bg:               $bg-white;
+$sidebar-padding-v:        1rem;
+$sidebar-active-bg:        #f0f9ff;
+$sidebar-active-text:      #0284c7;
+$sidebar-item-padding:     10px 15px;
+$sidebar-icon-size:        20px;
+$sidebar-font-size-label:  12px;
+$sidebar-font-size-sub:    13px;
+$sidebar-dropdown-padding-left: 2.5rem;
+$sidebar-active-border-width: 3px;
+
+// =============================================================================
+// DASHBOARD & PAGE COMPONENTS
+// =============================================================================
+
+// Shop Page
+$shop-container-gap:       20px;
+$shop-card-radius:         8px;
+$shop-card-min-width:      280px; 
+$shop-card-max-width:      400px;
+$shop-status-box-width:    120px;    // ADDED: Missing from Shop.module.scss
+$shop-status-box-border:   4px;      // ADDED: Missing from Shop.module.scss
+
+// Availability Section
+$avail-section-margin:     20px;
+$avail-box-gap:            15px;
+$avail-card-bg:            $bg-white;
+$avail-card-padding:       20px;
+$avail-status-box-padding: 16px; 
+$status-box-width:         140px;    // Used in AvailabilitySection.scss
+
+// SLO Section
+$slo-card-radius:          8px;
+$slo-card-width:           300px;
+$slo-card-height:          200px;
+$slo-border-radius:        8px;
+$slo-sidebar-ratio:        30%; 
+$slo-info-ratio:           70%;
+
+// GIV & Charts
+$giv-container-gap:        15px;
+$giv-min-height-wrapper:   400px;
+$status-box-padding:       12px;
+$status-box-border-width:  6px;
+$chart-grid-gap:           20px;
+$chart-card-padding:       20px;
+$chart-body-height:        180px;
+
+// Incident/Priority
+$incident-border-radius:   12px;
+$color-p1-bg:              #fff1f0;
+$color-p1-border:          #ff4d4f;
+$color-p2-bg:              #f9f0ff;
+$color-p2-border:          #722ed1;
+$color-p3-bg:              #e6f7ff;  // ADDED
+$color-p3-border:          #1890ff;  // ADDED
+
+// Global Layout & Scrollbar
+$content-bg:               #e0f2fe;
+$content-padding:          24px 30px;
+$scrollbar-width:          6px;
+$scrollbar-thumb:          #cbd5e1;
+$scrollbar-thumb-hover:    #94a3b8;

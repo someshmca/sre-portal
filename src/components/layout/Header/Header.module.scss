@@ -1,63 +1,102 @@
 .headerInner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 100vw; // Ensure it doesn't exceed screen width
-    height: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw; 
+  height: 100%;
+  padding: 0 $header-padding-side;
+  box-sizing: border-box;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 180px; // Prevents logo compression
+
+  .logoText { 
+    font-weight: $font-weight-bold; 
+    font-size: $header-logo-font-size; 
+    color: $color-text-main;
   }
 
-  .leftSection {
+  .menuBtn { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
     display: flex;
     align-items: center;
-    gap: 1rem;
-    .logoText { font-weight: 700; font-size: 1.2rem; }
-    .menuBtn { background: none; border: none; cursor: pointer; }
+    color: $color-text-muted; // Mapped to global muted color
+
+    &:hover { color: $color-text-main; }
   }
-  
-  .centerSection {
-    flex: 0 1 400px;
-    .searchWrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      .searchIcon { position: absolute; left: 10px; color: #666; }
-      .searchInput {
-        width: 100%;
-        padding: 8px 10px 8px 35px;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        outline: none;
+}
+
+.centerSection {
+  flex: 0 1 $header-search-max-width;
+
+  .searchWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .searchIcon { 
+      position: absolute; 
+      left: 10px; 
+      color: $color-text-muted; 
+      z-index: 1;
+    }
+
+    .searchInput {
+      width: 100%;
+      padding: 8px 10px 8px 35px;
+      border: 1px solid $color-border-light;
+      border-radius: 6px;
+      outline: none;
+      font-size: $font-size-body;
+      background-color: $header-search-bg;
+      transition: all 0.2s ease;
+      color: $color-text-main;
+
+      &::placeholder {
+        color: $color-text-muted;
+      }
+
+      &:focus {
+        border-color: $color-action-primary;
+        box-shadow: 0 0 0 2px rgba($color-action-primary, 0.1); // Professional focus ring
+        background-color: $bg-white;
       }
     }
   }
-  
-  .rightSection {
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: $header-padding-side;
+
+  .actions {
     display: flex;
+    gap: 1.2rem;
     align-items: center;
-    gap: 1.5rem;
-    padding-right: 20px; // Maintained 20px spacing from the right edge
-    .actions {
-        display: flex;
-        gap: 1.2rem;
-        align-items: center;
-        
-        button {
-        background: transparent; // Remove any background
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        color: #555; // Default icon color
-        display: flex;
-        align-items: center;
-        transition: color 0.2s;
     
-        &:hover {
-            color: #000; // Darken on hover
-            background: transparent; // Ensure no background on hover
-        }
-        }
+    button {
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: $color-text-muted; // Consistent with menuBtn
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-text-main;
+        background: transparent;
+      }
     }
   }
+}
