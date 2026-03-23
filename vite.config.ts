@@ -12,9 +12,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // We use path.resolve to find the exact file on your Mac
-        additionalData: `@use "${path.resolve(__dirname, "src/styles/_variables.scss")}" as *;`,
-        api: 'modern-compiler'
+        // Use a relative path or the alias to keep the string simple for TS
+        additionalData: `@use "@/styles/_variables.scss" as *;`,
       },
     },
   },
